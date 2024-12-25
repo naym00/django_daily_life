@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <style>
+        .container {
+            width: 1000px;
+            margin: auto;
+        }
+
+        /* Login style Start */
+        .login-input[type=text], .login-input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .login-submit {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .login-submit:hover {
+            opacity: 0.8;
+        }
+        .login-container {
+            padding-top: 100px;
+            width: 400px;
+            margin: auto;
+        }
+        /* Login style End */
+
+        /* Error style Start */
+        .error-box {
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .error-style {
+            color: red;
+            font-size: 50px;
+            font-weight: 700;
+        }
+        /* Error style End */
+
+        /* Navbar style Start */
+        .navbar-button {
+            background-color: #21334b;
+            padding: 10px 25px;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+        .navbar-button:hover, .navbar-button:active {
+            background-color: rgb(69, 111, 165);
+            border: 3px solid black;
+        }
+        .profile-box {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: #21334b;
+            border-radius: 10px;
+        }
+        .profile-box:hover, .profile-box:active {
+            background-color: rgb(69, 111, 165);
+            border-radius: 10px;
+            /* border: 3px solid black; */
+        }
+        .navbar-profile {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 8px;
+        }
+        /* Navbar style End */
+
+        /* User Profile style Start */
+        .photo-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+        }
+        .cover-photo {
+            position: absolute;
+            height: 300px;
+        }
+        .profile-pic {
+            position: absolute;
+            top: 0;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+        /* User Profile style End */
+    </style>
+    
+  </head>
+  <body>
+    <div class="container">
+        {% block navbar %}
+        {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+    </div>
+  </body>
+</html>

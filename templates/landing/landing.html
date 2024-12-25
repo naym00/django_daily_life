@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+
+{% block navbar %}
+  <div style="display: flex; justify-content: space-between; margin: 10px 0; background-color: darkcyan;">
+    {% if 'left_side' in navbar %}
+      {% if navbar.left_side.simple or navbar.left_side.profile %}
+        <div style="display: flex; justify-content: flex-start; align-items: center; height: 60px; gap: 15px;">
+          {% for item in navbar.left_side.simple %}
+            <a class="navbar-button" href="{{item.link}}">{{item.name}}</a>
+          {% endfor %}
+
+          {% for item in navbar.left_side.profile %}
+            <a style="text-decoration: none;" href="{{item.link}}">
+              <div class="profile-box">
+                  <span style="margin: 0 8px; color: white; font-weight: 700;">{{item.name}}</span>
+                  <img class="navbar-profile" src="{{item.image.image.url}}"/>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    {% if 'right_side' in navbar %}
+      {% if navbar.right_side.simple or navbar.right_side.profile %}
+        <div style="display: flex; justify-content: flex-end; align-items: center; height: 60px; gap: 15px;">
+          {% for item in navbar.right_side.simple %}
+            <a class="navbar-button" href="{{item.link}}">{{item.name}}</a>
+          {% endfor %}
+
+          {% for item in navbar.right_side.profile %}
+            <a style="text-decoration: none;" href="{{item.link}}">
+              <div class="profile-box">
+                  <span style="margin: 0 8px; color: white; font-weight: 700;">{{item.name}}</span>
+                  <img class="navbar-profile" src="{{item.image.image.url}}"/>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endblock %}
+
+
+{% block body %}
+  <h1>Landing Page</h1>
+{% endblock %}
