@@ -13,8 +13,8 @@ class Task(models.Model):
     user = models.ForeignKey(M_USER.User, on_delete=models.CASCADE, related_name='task_user')
     type = models.ForeignKey(Tasktype, on_delete=models.CASCADE, related_name='task_type')
     description = models.TextField(blank=True, null=True)
-    task_datetime = models.DateTimeField()
-    
+    task_datetime = models.DateTimeField(blank=True, null=True)
+    is_complete = models.BooleanField(default=False)
     created_datetime = models.DateTimeField(auto_now_add=True)
     
     is_active = models.BooleanField(default=True)
