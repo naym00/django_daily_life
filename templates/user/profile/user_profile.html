@@ -53,4 +53,33 @@
             </div>
         </div>
     </div>
+
+    <div class="user-task">
+      <div style="display: flex; justify-content: space-between;">
+
+        <div style="width: 60%; background-color: blueviolet;">
+          <span>A</span>
+        </div>
+
+        <div style="width: 39%; background-color: rgb(120, 111, 129);">
+
+          <div style="display: flex; flex-direction: row-reverse; background-color: rgb(62, 119, 62);">
+            <button>Add Task Type</button>
+          </div>
+          <div style="display: flex; flex-direction: column; background-color: rgb(14, 53, 14);">
+            {% for tasktype in tasktypes %}
+              <span>{{tasktype.type}}</span>
+            {% endfor %}
+          </div>
+          
+        </div>
+
+      </div>
+      <!-- <div class="single-task">
+        <h1>A</h1>
+      </div>
+      <div class="single-task">
+        <h1>B</h1>
+      </div> -->
+    </div>
 {% endblock %}

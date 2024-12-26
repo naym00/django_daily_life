@@ -1,3 +1,7 @@
 from django.contrib import admin
+from task import models as M_TASK
 
-# Register your models here.
+admin.site.register([
+    M_TASK.Tasktype,
+    M_TASK.Task
+])

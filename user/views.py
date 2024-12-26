@@ -15,7 +15,9 @@ def profile(request, username=None):
                 'navbar': HELP().getNavbar(user, 1),
                 'user': user,
                 'cover_photo': HELP().getCoverPhoto(user),
-                'profile_pic': HELP().getProfilePic(user)
+                'profile_pic': HELP().getProfilePic(user),
+                'tasktypes': user.tasktype_user.all(),
+                'tasks': user.task_user.all()
             })
             html_path = 'user/profile/user_profile.html'
     else: context.update({'title': 'Page Not Found - Error'})
