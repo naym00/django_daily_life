@@ -47,10 +47,11 @@
 {% block body %}
     <div class="photo-section">
         <div class="cover-photo">
-            <img style="height: 300px; border-radius: 15px;" src="{{cover_photo.image.url}}" />
+            <img style="height: 300px; border-radius: 15px;" src="{{user.coverphoto.image}}" />
             <div class="profile-pic">
-                <img style="height: 200px; border-radius: 50%;" src="{{profile_pic.image.url}}" />
+                <img style="height: 200px; border-radius: 50%;" src="{{user.profilepic.image}}" />
             </div>
         </div>
     </div>
+    {{user}}
 {% endblock %}

@@ -1,6 +1,8 @@
 from help.common.a import A as HELP
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from user.serializers.CUSTOM import serializer as CSRLZR_USER
+
 
 def landing(request):
     user = request.user
@@ -10,7 +12,7 @@ def landing(request):
         context.update({
             'title': 'Daily Life' + f'({user.first_name})' if user.first_name else '',
             'navbar':  HELP().getNavbar(user, 2),
-            'user': user,
+            'user': CSRLZR_USER.Usersrlzr(user, many=False).data,
         })
     else:
         context.update({
