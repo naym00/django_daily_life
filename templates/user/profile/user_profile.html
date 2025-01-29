@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load user_extras %}
 {% block title %}{{title}}{% endblock %}
 
 {% block navbar %}
@@ -52,6 +53,46 @@
                 <img style="height: 200px; border-radius: 50%;" src="{{user.profilepic.image}}" />
             </div>
         </div>
+    </div>
+
+    <div class="task-section">
+
+      {% for item in user.tasktypes %}
+        <a style="text-decoration: none;" href="/">
+          <div class="task-card">
+            
+            <div class="task-icon-container">
+              <img class="task-icon" src="{{item.icon}}" />
+            </div>
+            <div class="task-info-container">
+              <div class="task-info-inner-container">
+                <div class="task-info-title-container">
+                  <span class="task-info-title" title="{{item.type}}">{{item.type}}</span>
+                </div>
+                <div class="task-info-details">
+                  <span style="font-size: 15px; font-weight: 600;">Completed Task: {{ item.tasks|filter_task_completed}}</span>
+                </div>
+                <div class="task-info-details">
+                  <span style="font-size: 15px; font-weight: 600;">Remaining Task: {{item.tasks|filter_task_running}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+
+
+
+
+
+
+
+
+
+
+      
+      
+
     </div>
     {{user}}
 {% endblock %}

@@ -10,7 +10,6 @@ def profile(request, username=None):
     context = {}
     if user.username == username:
         if user.is_authenticated:
-            
             context.update({
                 'is_authenticated': True,
                 'title': user.get_full_name(),

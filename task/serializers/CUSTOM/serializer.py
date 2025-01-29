@@ -12,4 +12,4 @@ class Tasktypesrlzr(serializers.ModelSerializer):
     user=GSRLZR_USER.Usersrlzr(many=False)
     class Meta:
         model=M_TASK.Tasktype
-        fields=['id', 'user', 'task_type', 'type', 'is_active']
+        fields=['id', 'user', 'task_type', 'icon', 'type', 'is_active']
