@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load user_extras %}
 {% block title %}{{title}}{% endblock %}
 
 {% block navbar %}
@@ -46,42 +45,14 @@
 
 
 {% block body %}
-    <div class="photo-section">
-        <div class="cover-photo">
-            <img style="height: 300px; border-radius: 15px;" src="{{user.coverphoto.image}}" />
-            <div class="profile-pic">
-                <img style="height: 200px; border-radius: 50%;" src="{{user.profilepic.image}}" />
-            </div>
-        </div>
-    </div>
-
-    <div>
-      <p class="section-title">Task Section</p>
-      <div class="task-section">
-        {% for item in user.tasktypes %}
-          <a style="text-decoration: none;" href="{% url 'task-list' item.id %}">
-            <div class="task-card">
-              <div class="task-icon-container">
-                <img class="task-icon" src="{{item.icon}}" />
-              </div>
-              <div class="task-info-container">
-                <div class="task-info-inner-container">
-                  <div class="task-info-title-container">
-                    <span class="task-info-title" title="{{item.type}}">{{item.type}}</span>
-                  </div>
-                  <div class="task-info-details">
-                    <span style="font-size: 15px; font-weight: 600;">Completed Task: {{ item.tasks|filter_task_completed}}</span>
-                  </div>
-                  <div class="task-info-details">
-                    <span style="font-size: 15px; font-weight: 600;">Remaining Task: {{item.tasks|filter_task_running}}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        {% endfor %}
-      </div>
-    </div>
-    
-    {{user}}
+<div>
+  <p class="section-title">Task List</p>
+  <div class="task-list">
+    {% for item in tasks %}
+      {% comment %} <a style="text-decoration: none;" href="{% url 'task-list' item.id %}"> {% endcomment %}
+      <span>{{item.title}}</span>
+      {% comment %} </a> {% endcomment %}
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}

@@ -112,6 +112,13 @@
         }
         /* User Profile style End */
 
+        /* Section title style Start */
+        .section-title {
+            font-size: 25px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        /* Section title style End */
 
         /* User Task style Start */
         .task-section {
@@ -120,7 +127,7 @@
             justify-content: center;
             flex-flow: row wrap;
             gap: 10px;
-            margin: 10px 0;
+            
         }
         .task-card {
             height: 300px;
@@ -128,7 +135,10 @@
             border-radius: 10px;
             display: flex;
             flex-direction: column;
-            box-shadow: 2px 4px 20px 4px rgba(0,0,0,0.75);
+            box-shadow: 2px 4px 20px 4px #473e3e;
+        }
+        .task-card:hover {
+            box-shadow: 2px 4px 20px 4px #000000;
         }
         .task-icon-container {
             background-color: aquamarine;
@@ -176,6 +186,73 @@
             align-items: center;
         }
         /* User Task style End */
+
+
+        /* Task List style Start */
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            
+        }
+        .task-list-card {
+            height: 300px;
+            width: 200px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 4px 20px 4px #473e3e;
+        }
+        .task-card:hover {
+            box-shadow: 2px 4px 20px 4px #000000;
+        }
+        .task-icon-container {
+            background-color: aquamarine;
+            border-radius: 10px 10px 0 0;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .task-icon {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+        }
+        .task-info-container {
+            background-color: burlywood;
+            border-radius: 0 0 10px 10px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .task-info-inner-container {
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+        }
+        .task-info-title-container {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .task-info-title {
+            font-size: 20px;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .task-info-details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Task List style End */
     </style>
     
   </head>
